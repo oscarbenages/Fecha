@@ -13,11 +13,9 @@ public Fecha(int dia, int mes, int anio) {
 		if (anio < 0) return false;
 		if(dia>diasMes())return false;
 		else return true;
-	
-		// determinamos la cantidad de días del mes:
+	}
+		
 		private int diasMes(){
-			return 0;
-		}
 		int diasMes = 0;
 		switch (mes) {
 		case 1:
@@ -33,14 +31,15 @@ public Fecha(int dia, int mes, int anio) {
 		case 9:
 		case 11 : diasMes = 30;
 		break;
-		case 2 : // verificación de año bisiesto
-		if ( (anio % 400 == 0) || ( (anio % 4 == 0) && (anio % 100 != 0) ))
+		case 2 : 
+			if ( (anio % 400 == 0) || ( (anio % 4 == 0) && (anio % 100 != 0) ))
 			diasMes = 29; 
 		else
 			diasMes = 28;
 		break;
 		}
-		if (dia > diasMes) return false; 
-		else return true;
-		}
+		return diasMes;
+		
+		
+	}
 }
