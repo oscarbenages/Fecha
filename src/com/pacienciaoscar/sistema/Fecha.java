@@ -11,7 +11,13 @@ public Fecha(int dia, int mes, int anio) {
 		if (dia < 1 || dia > 31) return false; 
 		if (mes < 1 || mes > 12) return false; 
 		if (anio < 0) return false;
-		// determinamos la cantidad de días del mes: 
+		if(dia>diasMes())return false;
+		else return true;
+	
+		// determinamos la cantidad de días del mes:
+		private int diasMes(){
+			return 0;
+		}
 		int diasMes = 0;
 		switch (mes) {
 		case 1:
